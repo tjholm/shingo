@@ -1,0 +1,70 @@
+syntax = "proto3";
+package shingo.events.v1;
+
+import "google/protobuf/struct.proto";
+
+// protoc plugin options for code generation
+option go_package = "shingo/v1";
+// option java_package = "io.nitric.proto.document.v1";
+// option java_multiple_files = true;
+// option java_outer_classname = "Documents";
+// option php_namespace = "Nitric\\Proto\\Document\\V1";
+// option csharp_namespace = "Nitric.Proto.Document.v1";
+
+service EventsService {
+    // Emits an event for a topic
+    // FIXME: This should be handled on a single stream, will implement once grpc web handled bi-di streaming 
+    rpc Emit (EmitRequest) returns (EmitResponse);
+
+    // Subscribes to events on a topic
+    // FIXME: deprecate once bi-di streaming is available for gRPC web
+    rpc Subscribe (SubscribeRequest) returns (stream SubscriptionEvent);
+
+    // Unsubscribe from the topic
+    // FIXME: This should be handled on a single stream, will implement once grpc web handled bi-di streaming 
+    rpc Unsubscribe (UnsubscribeRequest) returns (UnsubscribeResponse);
+}
+
+message Event {
+    oneof content {
+        // send an object
+        google.protobuf.Struct object = 1;
+        // send binary content (limit will be 4mb)
+        bytes binary = 2;
+    }
+}
+
+message EmitRequest {
+    string subscriber_id = 1;
+    string topic = 2;
+    Event event = 3;
+}
+
+message EmitResponse {}
+
+message SubscribeRequest {
+    string topic = 1;
+}
+
+message SubscriptionEvent {
+    oneof event {
+        OnSubscribeEvent on_subscribe = 1; 
+        OnMessageEvent on_message = 2;
+    }
+}
+
+message OnSubscribeEvent {
+    string subscriber_id = 1;
+}
+
+message OnMessageEvent {
+    google.protobuf.Struct event = 1;
+}
+
+message UnsubscribeRequest {
+    string subscriber_id = 1;
+    string topic = 2;
+}
+
+message UnsubscribeResponse {}
+
