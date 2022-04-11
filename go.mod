@@ -6,6 +6,8 @@ require (
 	github.com/golang/protobuf v1.5.2
 	github.com/golangci/golangci-lint v1.45.2
 	github.com/google/addlicense v1.0.0
+	github.com/google/uuid v1.3.0
+	github.com/improbable-eng/grpc-web v0.15.0
 	github.com/onsi/ginkgo v1.16.5
 	github.com/uw-labs/lichen v0.1.5
 	google.golang.org/grpc v1.43.0
@@ -32,6 +34,7 @@ require (
 	github.com/breml/bidichk v0.2.2 // indirect
 	github.com/breml/errchkjson v0.2.3 // indirect
 	github.com/butuzov/ireturn v0.1.1 // indirect
+	github.com/cenkalti/backoff/v4 v4.1.1 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
 	github.com/charithe/durationcheck v0.0.9 // indirect
 	github.com/chavacava/garif v0.0.0-20210405164556-e8a0a408d6af // indirect
@@ -39,6 +42,7 @@ require (
 	github.com/daixiang0/gci v0.3.3 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/denis-tingaikin/go-header v0.4.3 // indirect
+	github.com/desertbit/timer v0.0.0-20180107155436-c41aec40b27f // indirect
 	github.com/esimonov/ifshort v1.0.4 // indirect
 	github.com/ettle/strcase v0.1.1 // indirect
 	github.com/fatih/color v1.13.0 // indirect
@@ -85,6 +89,7 @@ require (
 	github.com/julz/importas v0.1.0 // indirect
 	github.com/kisielk/errcheck v1.6.0 // indirect
 	github.com/kisielk/gotool v1.0.0 // indirect
+	github.com/klauspost/compress v1.11.7 // indirect
 	github.com/kulti/thelper v0.5.1 // indirect
 	github.com/kunwardeep/paralleltest v1.0.3 // indirect
 	github.com/kyoh86/exportloopref v0.1.8 // indirect
@@ -118,12 +123,13 @@ require (
 	github.com/polyfloyd/go-errorlint v0.0.0-20211125173453-6d6d39c5bb8b // indirect
 	github.com/prometheus/client_golang v1.7.1 // indirect
 	github.com/prometheus/client_model v0.2.0 // indirect
-	github.com/prometheus/common v0.10.0 // indirect
+	github.com/prometheus/common v0.15.0 // indirect
 	github.com/prometheus/procfs v0.6.0 // indirect
 	github.com/quasilyte/go-ruleguard v0.3.15 // indirect
 	github.com/quasilyte/gogrep v0.0.0-20220103110004-ffaa07af02e3 // indirect
 	github.com/quasilyte/regex/syntax v0.0.0-20200407221936-30656e2c4a95 // indirect
 	github.com/rivo/uniseg v0.2.0 // indirect
+	github.com/rs/cors v1.7.0 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/ryancurrah/gomodguard v1.2.3 // indirect
 	github.com/ryanrolds/sqlclosecheck v0.3.0 // indirect
@@ -176,4 +182,5 @@ require (
 	mvdan.cc/interfacer v0.0.0-20180901003855-c20040233aed // indirect
 	mvdan.cc/lint v0.0.0-20170908181259-adc824a0674b // indirect
 	mvdan.cc/unparam v0.0.0-20211214103731-d0ef000c54e5 // indirect
+	nhooyr.io/websocket v1.8.6 // indirect
 )

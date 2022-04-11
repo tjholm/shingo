@@ -1,3 +1,6 @@
-tools/
+# Ignore tools (except for tools.go)
 
-!tools/tools.go
+tools/
+!tools/*.go
+
+bin/

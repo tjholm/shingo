@@ -1,5 +1,9 @@
 include tools/tools.mk
 
+build: init
+	@echo building shingo server
+	@go build -o bin/shingo cmd/main.go 
+
 init: go-mod-download install-tools
 
 go-mod-download:

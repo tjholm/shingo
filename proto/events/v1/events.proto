@@ -19,10 +19,6 @@ service EventsService {
     // Subscribes to events on a topic
     // FIXME: deprecate once bi-di streaming is available for gRPC web
     rpc Subscribe (SubscribeRequest) returns (stream SubscriptionEvent);
-
-    // Unsubscribe from the topic
-    // FIXME: This should be handled on a single stream, will implement once grpc web handled bi-di streaming 
-    rpc Unsubscribe (UnsubscribeRequest) returns (UnsubscribeResponse);
 }
 
 message Event {
@@ -58,13 +54,5 @@ message OnSubscribeEvent {
 }
 
 message OnMessageEvent {
-    google.protobuf.Struct event = 1;
+    Event event = 1;
 }
-
-message UnsubscribeRequest {
-    string subscriber_id = 1;
-    string topic = 2;
-}
-
-message UnsubscribeResponse {}
-
