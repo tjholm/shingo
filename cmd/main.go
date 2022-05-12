@@ -25,6 +25,4 @@ func main() {
 	httpServ := grpcweb.WrapServer(grpcServer, grpcweb.WithOriginFunc(func(origin string) bool { return true }))
 	fmt.Println("server listenting on :50051")
 	http.Serve(lis, httpServ)
-
-	// grpcServer.Serve(lis)
 }

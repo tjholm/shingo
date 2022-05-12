@@ -20,7 +20,6 @@ type EventsServer struct {
 	v1.UnimplementedEventsServiceServer
 	subscriptions map[string]map[string]*Subscriber
 	subLock       sync.RWMutex
-	// maintain a map of topics to and SubscriptionServers to send them on
 }
 
 func (e *EventsServer) Emit(ctx context.Context, req *v1.EmitRequest) (*v1.EmitResponse, error) {
@@ -37,7 +36,6 @@ func (e *EventsServer) Emit(ctx context.Context, req *v1.EmitRequest) (*v1.EmitR
 					continue
 				}
 
-				// fmt.Println("emitting to ", id)
 				sub.stream.Send(&v1.SubscriptionEvent{
 					Event: &v1.SubscriptionEvent_OnMessage{
 						OnMessage: &v1.OnMessageEvent{
